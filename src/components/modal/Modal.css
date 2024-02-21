@@ -1,0 +1,50 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-hidden {
+  display: none;
+  overflow: hidden;
+}
+
+.modal-content {
+  z-index: 1001;
+  width: 80%;
+
+}
+
+.close-icon {
+  font-size: 48px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 10px;
+}
+
+.input-error {
+  border: 1px solid red;
+  padding: 8px;
+  margin: 6px;
+  border-radius: 8px;
+}

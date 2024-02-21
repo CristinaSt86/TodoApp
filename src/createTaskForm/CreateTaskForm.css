@@ -1,0 +1,23 @@
+/* input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 10 px;
+}
+
+.input-error {
+  border: 1px solid red;
+} */
+
+.form-row,
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  gap: 16px;
+}
