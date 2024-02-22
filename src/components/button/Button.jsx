@@ -4,7 +4,6 @@ import "./Button.css";
 const Button = (props) => {
   return (
     <button
-      disabled={!props.isValid}
       className="primary-button"
       {...props}
       onClick={props.onClick}

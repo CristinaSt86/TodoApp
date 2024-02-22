@@ -60,17 +60,21 @@ const CreateTaskForm = (props) => {
 
     if (props.taskToEdit) {
       props.editTodo(props.taskToEdit.id, newTask);
-      console.log("Task updated, closing modal...");
       props.closeModal();
     } else {
       props.addTask(newTask);
-      console.log("New task added, closing modal...");
       props.closeModal();
     }
 
+    setTaskId("");
     setTaskTitle("");
     setTaskDescription("");
     setTaskCompleted(false);
+  };
+
+  // Check if either task title or task description is empty
+  const isFormEmpty = () => {
+    return !taskTitle.trim() || !taskDescription.trim();
   };
 
   return (
@@ -79,6 +83,7 @@ const CreateTaskForm = (props) => {
       <form onSubmit={handleSubmitForm}>
         <div className="form-row">
           <Input
+            id="taskTitle"
             onChange={handleTaskTitle}
             placeholder="Title"
             type="text"
@@ -90,6 +95,7 @@ const CreateTaskForm = (props) => {
         </div>
         <div className="form-row">
           <TextArea
+            id="taskDescription"
             onChange={handleTaskDescription}
             placeholder="Description"
             type="text"
@@ -99,8 +105,8 @@ const CreateTaskForm = (props) => {
           />
           <p className="error-message">{formValidation.taskDescription}</p>
         </div>
-        <Button type="submit" isValid={formValidation.isValid}>
-          {props.taskToEdit ? "Update" : "Create"}{" "}
+        <Button type="submit" disabled={isFormEmpty()}>
+          {props.taskToEdit ? "Update" : "Create"}
         </Button>
       </form>
     </Card>
