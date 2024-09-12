@@ -14,18 +14,6 @@ const TODOS_MOCK = [
   {
     id: "2",
     title: "Todo 2",
-    description: "",
-    completed: false,
-  },
-  {
-    id: "3",
-    title: "Todo 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
-    completed: true,
-  },
-  {
-    id: "4",
-    title: "Todo 4",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
     completed: true,
   },
@@ -33,6 +21,7 @@ const TODOS_MOCK = [
 
 const App = () => {
   const [taskData, setTaskData] = useState(TODOS_MOCK);
+  // eslint-disable-next-line no-unused-vars
   const [completed, setCompleted] = useState(false);
   const [taskToEdit, setTaskToEdit] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
